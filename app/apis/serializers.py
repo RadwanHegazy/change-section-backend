@@ -20,4 +20,5 @@ class PostSerializer (serializers.ModelSerializer) :
         data = super().to_representation(instance)
         data['level'] = STR_LEVEL[instance.level]
         data['posted_at'] = instance.posted_at.date()
+        data.pop('student_collage_id')
         return data
